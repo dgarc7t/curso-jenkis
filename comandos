@@ -1,0 +1,32 @@
+*******************************************************************************************
+docker-compose	
+
+version: '3'
+services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - $PWD/jenkins_home:/var/jenkins_home
+    networks:
+      - net
+networks:
+  net:
+
+*******************************************************************************************
+Corremos este comando para crear el docker de jenkins
+
+docker run   -u root   -p 8080:8080   -v "$PWD":/var/jenkins_home -d jenkins/jenkins
+
+con este comando vemos la clave provisional que crea para hacer el primer inicio de sesion
+
+docker logs -f name-docker
+
+**********************************************************************************************
+
+Parmetro
+
+Tipos de parametros
+
